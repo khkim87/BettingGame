@@ -1,0 +1,13 @@
+.cvs{
+    /* background-color: orange; */
+}
+
+.rulret{
+    width: 300px;
+    height: 300px;
+    transition: all ease 2s;
+}
+
+.start{
+    transform: rotate(2000deg);
+}
