@@ -23,7 +23,8 @@ function canvers(list){
 }
 
 function userSetting(userText){
-    let list = [];
+    if(userText != ''){
+        let list = [];
     let userList = userText.split(',');
     let currPoint = 270;
 
@@ -48,6 +49,8 @@ function userSetting(userText){
 
     console.log(userList);
     canvers(list);
+    }
+    
 }
 
 function clickSetButton(){
