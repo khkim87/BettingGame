@@ -5,7 +5,8 @@ const rulret = document.querySelector('.rulret');
 const joinList = document.querySelector('.joinList');
 
 function canvers(list){
-    var ctx = document.querySelector('.cvs').getContext("2d");
+    var canvas = document.querySelector('.cvs');
+    var ctx = canvas.getContext("2d");
     let radius = 120;
 
     
@@ -13,10 +14,12 @@ function canvers(list){
     //그리기
     list.map(user =>{
         ctx.beginPath();
-        ctx.moveTo(150,150);
-        ctx.arc(150,150, radius, (Math.PI/180) * user.startPoint, (Math.PI/180) * user.endPoint ,false);
-        ctx.fillStyle = user.color;
-        ctx.fill();
+        ctx.moveTo(canvas.width/2,canvas.height/2);
+        ctx.arc(canvas.width/2,canvas.height/2, radius, (Math.PI/180) * user.startPoint, (Math.PI/180) * user.endPoint ,false);
+        ctx.font = "15px Comic Sans MS";
+        ctx.textAlign = user.userName;
+        ctx.fillText(user.userName, canvas.width/2 + radius/2, canvas.height/2 - radius/2);
+        // ctx.fill();
         ctx.stroke();
     });
     ctx.closePath();
